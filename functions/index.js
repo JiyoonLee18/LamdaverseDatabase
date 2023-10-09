@@ -26,7 +26,8 @@ app.post("/create", (req, res)=> {
     (async ()=>{
         try{
             await db.collection('userDetails').doc(req.body.id).create({
-                id: req.body.id
+                id: req.body.id,
+                email: req.body.email
             })
 
             return res.status(200).send({status:'Sucess', msg:'Data Saved'});
